@@ -26,6 +26,31 @@ console.log("1-masala:");
 
 
 
+console.log("2-masala:");
+
+{
+
+    class Timer {
+        constructor(seconds) {
+            this.seconds = seconds;
+        }
+        start() {
+            for (let i = 1; i <= this.seconds; i++) { 
+                setTimeout(() => {
+                    console.log(`${i} sekunt o'tdi`);
+                }, i * 1000);
+            }
+        }
+    }
+
+    let time1 = new Timer(5);
+    time1.start();
+
+}
+
+
+
+
 console.log("3-masala:");
 
 {
@@ -192,31 +217,6 @@ console.log("8-masala:");
     let student2 = new Grade("Olim", [100,95,0,75,72,60,50,99]);
     console.log(student2.getAverage());
     console.log(student2.isPassed());
-
-}
-
-
-
-
-console.log("2-masala:");
-
-{
-
-    class Timer {
-        constructor(seconds) {
-            this.seconds = seconds;
-        }
-        start() {
-            for (let i = 1; i <= this.seconds; i++) { 
-                setTimeout(() => {
-                    console.log(`${i} sekunt o'tdi`);
-                }, i * 1000);
-            }
-        }
-    }
-
-    let time1 = new Timer(5);
-    time1.start();
 
 }
 
