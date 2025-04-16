@@ -1,224 +1,48 @@
-console.log("HOMEWROK:");
+import { product1, product2, time1, time2, flight1, flight2, point1, point2, cola, moxito, post1, post2, card1, card2, student1, student2 } from "./main.js";
 
-console.log("1-masala:");
 
-{
+// 1-masala:
+console.log(product1.getTotalPrice());
+console.log(product2.getTotalPrice());
 
-    class ShopProduct {
-        constructor(name, price, quantity) {
-            this.name = name;
-            this.price = price;
-            this.quantity = quantity;
-        }
-        getTotalPrice(){
-            return this.price * this.quantity;
-        }
-    }
 
-    let product1 = new ShopProduct("Lays", 15, 4);
-    console.log(product1.getTotalPrice());
+// 2-masala:
+console.log(time1.start());
+console.log(time2.start());
 
-    let product2 = new ShopProduct("Chers", 13, 2);
-    console.log(product2.getTotalPrice());
 
-}
+// 3-masala:
+console.log(flight1.getInfo());
+console.log(flight2.getInfo());
 
 
+// 4-masala:
+console.log(point1.getDistance());
+console.log(point2.getDistance());
 
 
-console.log("2-masala:");
+// 5-masala:
+console.log(cola.addProduct("Fanta"));
+console.log(cola.getTotal(15000));
+console.log(moxito.addProduct("Flash"));
+console.log(moxito.getTotal(10000));
 
-{
 
-    class Timer {
-        constructor(seconds) {
-            this.seconds = seconds;
-        }
-        start() {
-            for (let i = 1; i <= this.seconds; i++) { 
-                setTimeout(() => {
-                    console.log(`${i} sekunt o'tdi`);
-                }, i * 1000);
-            }
-        }
-    }
+// 6-masala:
+console.log(post1.like());
+console.log(post2.like());
 
-    let time1 = new Timer(5);
-    time1.start();
 
-}
+// 7-masala:
+console.log(card1.withdraw(700));
+console.log(card2.withdraw(700));
 
 
-
-
-console.log("3-masala:");
-
-{
-
-    class Flight {
-        constructor(from, to, duration) {
-            this.from = from;
-            this.to = to;
-            this.duration = duration;
-        }
-        getInfo(){
-            return `${this.from} -> ${this.to} (${this.duration} soat)`;
-        }
-    }    
-
-    let flight1 = new Flight("Toshkent", "Istanbul", 5);
-    console.log(flight1.getInfo());
-
-    let flight2 = new Flight("Toshkent", "Bukhara", 1);
-    console.log(flight2.getInfo());
-
-}
-
-
-
-
-console.log("4-masala:");
-
-{
-
-    class Point {
-        constructor(x, y) {
-            this.x = x;
-            this.y = y;
-        }
-        getDistance() {
-            return Math.sqrt(this.x ** 2 + this.y ** 2);
-        }
-    }
-
-    let point1 = new Point(3, 4);
-    console.log(point1.getDistance());
-
-    let point2 = new Point(13, 41);
-    console.log(point2.getDistance());
-
-}
-
-
-
-
-console.log("5-masala:");
-
-{
-
-    class Product {
-        constructor(name, price) {
-            this.name = name;
-            this.price = price;
-        }
-    }
-
-    class Cart extends Product {
-        constructor(name, price) {
-            super(name, price);
-        }
-        addProduct(newProduct) {
-            let productName = new Map();
-            productName.set("name1", this.name);
-            productName.set("name2", newProduct);
-            let arrName = [productName.get("name1"), productName.get("name2")];
-            return arrName;
-        }
-        getTotal(newPrice) {
-            let totalPrice = new Map();
-            totalPrice.set("price", this.price + newPrice);
-            return totalPrice.get("price");
-        }
-    }
-
-    let product1 = new Cart("Cola", 14000);
-    console.log(product1.addProduct("Fanta"));
-    console.log(product1.getTotal(15000));
-
-    let product2 = new Cart("Moxito", 12000);
-    console.log(product2.addProduct("Fanta"));
-    console.log(product2.getTotal(15000));
-
-}
-
-
-
-
-console.log("6-masala:");
-
-{
-
-    class Post {
-        constructor(title, content, likes) {
-            this.title = title;
-            this.content = content;
-            this.likes = likes;
-        }
-        like() {
-            return this.likes + 1;
-        }
-    }
-
-    let post = new Post("Football Plus", "Podcast", 1000);
-    console.log(post.like());
-
-}
-
-
-
-
-console.log("7-masala:");
-
-{
-
-    class BankCard {
-        constructor(owner, balance, limit) {
-            this.owner = owner;
-            this.balance = balance;
-            this.limit = limit;
-        }
-        withdraw(amount) {
-            return amount <= this.limit && amount <= this.balance
-        }
-    } 
-
-    let card1 = new BankCard("Nodir", 1000, 500);
-    console.log(card1.withdraw(700));
-
-    let card2 = new BankCard("Nodir", 1000, 5000);
-    console.log(card2.withdraw(700));
-
-}
-
-
-
-
-console.log("8-masala:");
-
-{
-
-    class Grade {
-        constructor(studentName, scores) {
-            this.studentName = studentName;
-            this.scores = scores;
-        }
-        getAverage() {
-            return this.scores.reduce((n, m) => n + m, 0)/this.scores.length;
-        }
-        isPassed() {
-            return this.scores.reduce((n, m) => n + m, 0)/this.scores.length > 60;
-        }
-    }
-
-    let student1 = new Grade("Laylo", [90,15,60,70,72,0,50,99]);
-    console.log(student1.getAverage());
-    console.log(student1.isPassed());
-
-    let student2 = new Grade("Olim", [100,95,0,75,72,60,50,99]);
-    console.log(student2.getAverage());
-    console.log(student2.isPassed());
-
-}
+// 8-masala:
+console.log(student1.getAverage());
+console.log(student1.isPassed());
+console.log(student2.getAverage());
+console.log(student2.isPassed());
 
 
 
